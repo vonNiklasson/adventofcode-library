@@ -1,13 +1,18 @@
 import re
-from setuptools import setup
+import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-with open("adventofcode_library/_version.py", "r") as f:
+with open("adventofcode/_version.py", "r") as f:
     version = re.search(r"__version__ = \"(.*?)\"", f.read()).group(1)
 
-setup(
+packages = []
+for package in setuptools.find_packages():
+    if not package.startswith('tests'):
+        packages.append(package)
+
+setuptools.setup(
     name="adventofcode-library",
     version=version,
     author="Johan Niklasson",
@@ -20,6 +25,7 @@ setup(
         "python-dotenv==0.15.0",
         "requests==2.25.0"
     ],
+    packages=packages,
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
