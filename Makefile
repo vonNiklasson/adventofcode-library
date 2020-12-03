@@ -1,6 +1,8 @@
 
 SOURCE_FOLDER = adventofcode_library
 
+# Maintaining targets
+
 .PHONY: clean
 clean:
 	rm -f .gitinfo
@@ -34,3 +36,26 @@ update:
 .PHONY: build
 build:
 	python setup.py --quiet sdist bdist_wheel
+
+.PHONY: version
+version:
+	python -c "import $(SOURCE_FOLDER); print($(SOURCE_FOLDER).__version__)"
+
+
+# Versioning targets
+
+.PHONY: bump-version-patch
+bump-version-patch:
+	bump2version patch --list
+	git log --oneline -1
+
+
+.PHONY: bump-version-minor
+bump-version-minor:
+	bump2version minor --list
+	git log --oneline -1
+
+.PHONY: bump-version-major
+bump-version-major:
+	bump2version major --list
+	git log --oneline -1
