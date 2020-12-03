@@ -1,5 +1,5 @@
 
-SOURCE_FOLDER = discrete_deployment
+SOURCE_FOLDER = adventofcode_library
 
 .PHONY: clean
 clean:
