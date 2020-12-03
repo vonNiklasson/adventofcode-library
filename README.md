@@ -5,7 +5,7 @@
 [![Supports Wheel format][wheel_img]][wheel_target]
 
 [license_target]: https://raw.githubusercontent.com/vonNiklasson/adventofcode-library/develop/LICENSE
-[license_img]: https://img.shields.io/pypi/l/adventofcode-library
+[license_img]: https://img.shields.io/pypi/l/adventofcode-library.png
 
 [pypi_target]: https://pypi.python.org/pypi/adventofcode-library/
 [pypi_version_img]: https://img.shields.io/pypi/v/adventofcode-library
