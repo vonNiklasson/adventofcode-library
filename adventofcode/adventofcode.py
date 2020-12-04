@@ -12,7 +12,6 @@ class AdventOfCode:
     BASE_URL = "https://adventofcode.com"
 
     def __init__(self, session_id: str = None, working_dir: str = None):
-        print("wow")
         session_id = os.getenv("session_id", None) if session_id is None else session_id
         if session_id is None:
             raise MissingSessionIdException()
