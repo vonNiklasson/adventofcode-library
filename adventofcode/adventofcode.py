@@ -35,4 +35,4 @@ class AdventOfCode:
     def validate_session(self):
         session = utils.get_session(self.session_id)
         response = session.get(self.BASE_URL)
-        return '[Log Out]' in response.text
+        return "[Log Out]" in response.text
