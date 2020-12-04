@@ -1,4 +1,4 @@
-
+PYTHON ?= python3
 SOURCE_FOLDER = adventofcode
 
 # Maintaining targets
@@ -22,11 +22,11 @@ check-imports:
 
 .PHONY: check-code
 check-code:
-	black --check $(SOURCE_FOLDER)
+	black --check $(SOURCE_FOLDER) tests/*
 
 .PHONY: reformat
 reformat:
-	isort --atomic $(SOURCE_FOLDER)
+	isort --atomic $(SOURCE_FOLDER) tests/*
 	black $(SOURCE_FOLDER)
 
 .PHONY: update
@@ -35,12 +35,15 @@ update:
 
 .PHONY: build
 build:
-	python setup.py --quiet sdist bdist_wheel
+	$(PYTHON) setup.py --quiet sdist bdist_wheel
 
 .PHONY: version
 version:
-	python -c "import $(SOURCE_FOLDER); print($(SOURCE_FOLDER).__version__)"
+	$(PYTHON) -c "import $(SOURCE_FOLDER); print($(SOURCE_FOLDER).__version__)"
 
+.PHONY: tests
+tests:
+	$(PYTHON) -m pytest tests/
 
 # Versioning targets
 

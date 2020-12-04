@@ -1,0 +1,2 @@
+class MissingSessionIdException(Exception):
+    pass
