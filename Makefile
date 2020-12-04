@@ -1,5 +1,5 @@
 
-SOURCE_FOLDER = adventofcode_library
+SOURCE_FOLDER = adventofcode
 
 # Maintaining targets
 
