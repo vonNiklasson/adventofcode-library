@@ -27,7 +27,7 @@ check-code:
 .PHONY: reformat
 reformat:
 	isort --atomic $(SOURCE_FOLDER) tests/*
-	black $(SOURCE_FOLDER)
+	black $(SOURCE_FOLDER) tests/*
 
 .PHONY: update
 update:
