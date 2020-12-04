@@ -31,7 +31,7 @@ reformat:
 
 .PHONY: update
 update:
-	pip install --upgrade -r requirements-dev.txt
+	pip install --upgrade -r requirements.txt
 
 .PHONY: build
 build:

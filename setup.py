@@ -22,7 +22,6 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/vonNiklasson/adventofcode-library",
     install_requires=[
-        "python-dotenv==0.15.0",
         "requests==2.25.0"
     ],
     packages=packages,
