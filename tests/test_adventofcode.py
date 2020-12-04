@@ -29,12 +29,19 @@ class TestInitialisation:
 
 
 class TestValidSession:
+
     def test_valid_session_with_valid_session_id(self, requests_mock):
+        """
+        Assert that valid_session returns True with a valid session_id
+        """
         requests_mock.get(AdventOfCode.BASE_URL, text="Body text here and a [Log Out] button")
         aoc = AdventOfCode("valid_session")
         assert aoc.validate_session() is True
 
     def test_valid_session_with_invalid_session_id(self, requests_mock):
+        """
+        Assert that valid_session returns False with an invalid session_id
+        """
         requests_mock.get(AdventOfCode.BASE_URL, text="Body text here without any button")
         aoc = AdventOfCode("invalid_session")
         assert aoc.validate_session() is False
